@@ -1,5 +1,5 @@
-Shortcodes
-==========
+Codesnip
+========
 
 Codesnip is a Django app to store code snippets with syntax highlighting.
 **This app requires [pygments](http://pygments.org/).**
