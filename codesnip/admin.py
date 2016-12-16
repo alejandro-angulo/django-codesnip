@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib import admin
 from codesnip.models import Snippet
+from codesnip.settings import SETTINGS
 from pygments import highlight
 from pygments import lexers
 from pygments.formatters import HtmlFormatter
@@ -18,9 +19,7 @@ class SnippetForm(forms.ModelForm):
     def save(self, commit=True):
         snippet = super(SnippetForm, self).save(commit=False)
         language_lexer = getattr(lexers, snippet.language)
-        formatter = HtmlFormatter(anchorlinenos=True, linenos=True,
-                                  cssclass="codesnip", lineanchors="line",
-                                  linespans="line")
+        formatter = HtmlFormatter(**SETTINGS['FORMATTER_ARGS'])
         snippet.pygmentized = highlight(snippet.code, language_lexer(),
                                         formatter)
         if commit:
