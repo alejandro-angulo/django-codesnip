@@ -1,5 +1,5 @@
 """
-Settings for shortcodes are namespaced in the CODESNIP setting.
+Settings for codesnip are namespaced in the CODESNIP setting.
 For exmaple your project's `settings.py` file might looks like this:
 
 CODESNIP = {
@@ -24,6 +24,6 @@ DEFAULTS = {
 SETTINGS = {}
 for setting_name, setting_default in DEFAULTS.items():
     try:
-        SETTINGS[setting_name] = project_settings.SHORTCODES[setting_name]
+        SETTINGS[setting_name] = project_settings.CODESNIP[setting_name]
     except (AttributeError, KeyError):
         SETTINGS[setting_name] = DEFAULTS[setting_name]
