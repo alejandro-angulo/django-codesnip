@@ -12,6 +12,7 @@ setup(
     version='0.2.1',
     packages=find_packages(),
     include_package_data=True,
+    test_suite='runtests.runtests',
     license='LGPLv3',
     description='A Django app to store code snippets with syntax highlighting '
                 'utilizing pygments.',
