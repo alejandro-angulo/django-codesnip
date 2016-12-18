@@ -19,6 +19,8 @@ def do_code(parser, token):
 class CodeNode(template.Node):
     def __init__(self, nodelist):
         self.nodelist = nodelist
+        self.ObjectDoesNotExistMessage = "<div class='alert alert-warning' "\
+            "role='alert'>Code snippet missing!</div>"
 
     def render(self, context):
         output = self.nodelist.render(context)

@@ -13,10 +13,6 @@ PYTEST_ARGS = ['--cov-report', 'html', '--cov', 'codesnip',
 def runtests():
     os.environ['DJANGO_SETTINGS_MODULE'] = 'tests.test_settings'
     django.setup()
-    # TestRunner = get_runner(settings)
-    # test_runner = TestRunner()
-    # failures = test_runner.run_tests(*PYTEST_ARGS)
-    # sys.exit(bool(failures))
     sys.exit(pytest.main(PYTEST_ARGS))
 
 
