@@ -1,4 +1,5 @@
 from django import forms
+from codesnip.models import Snippet
 from codesnip.settings import SETTINGS
 from pygments import highlight
 from pygments import lexers
@@ -13,6 +14,7 @@ class SnippetForm(forms.ModelForm):
 
     class Meta:
         exclude = ['pygmentized']
+        model = Snippet
 
     def save(self, commit=True):
         snippet = super(SnippetForm, self).save(commit=False)
