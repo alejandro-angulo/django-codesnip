@@ -5,6 +5,9 @@ import re
 
 register = template.Library()
 
+ObjectDoesNotExistMessage = "<div class='alert alert-warning' "\
+    "role='alert'>Code snippet missing!</div>"
+
 
 # Parse text for snippet shortcode: !!snippet slug!!
 def do_code(parser, token):
@@ -29,8 +32,7 @@ class CodeNode(template.Node):
                     snippet = Snippet.objects.get(slug=match.group(1))
                     output_list[i] = snippet.pygmentized
                 except ObjectDoesNotExist:
-                    output_list[i] = "<div class='alert alert-warning' "\
-                        "role='alert'>Code snippet missing!</div>"
+                    output_list[i] = ObjectDoesNotExistMessage
 
         output = ''.join(output_list)
         return output
