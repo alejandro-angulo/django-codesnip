@@ -22,4 +22,3 @@ class Snippet(models.Model):
         language_lexer = getattr(lexers, self.language)
         formatter = HtmlFormatter(**SETTINGS['FORMATTER_ARGS'])
         self.pygmentized = highlight(self.code, language_lexer(), formatter)
-        print(self.pygmentized)
