@@ -11,7 +11,7 @@ PYTEST_ARGS = ['--cov-report', 'html', '--cov', 'codesnip',
 
 
 def runtests():
-    os.environ['DJANGO_SETTINGS_MODULE'] = 'tests.test_settings'
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'tests.conftest'
     django.setup()
     sys.exit(pytest.main(PYTEST_ARGS))
 
