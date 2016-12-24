@@ -17,9 +17,9 @@ setup(
     description='A Django app to store code snippets with syntax highlighting '
                 'utilizing pygments.',
     long_description=README,
-    url='https://<github repo>',
+    url='https://github.com/vacuus/django-codesnip',
     author='Alejandro Angulo',
-    author_email='e@mail.com',
+    author_email='aab.j13@gmail.com',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
