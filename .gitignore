@@ -16,3 +16,4 @@ cover/
 
 # virtualenv
 env/
+venv/
